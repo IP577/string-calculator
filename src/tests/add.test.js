@@ -11,3 +11,7 @@ test("add: should return the number itself for single number input", () => {
 test("add: should return the sum of two comma-separated numbers", () => {
   expect(add("1,5")).toBe(6);
 });
+
+test("add: should return the sum of multiple comma-separated numbers", () => {
+  expect(add("1,2,3,4")).toBe(10);
+});
