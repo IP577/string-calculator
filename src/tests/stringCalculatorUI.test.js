@@ -20,3 +20,15 @@ test("UI: should show result when numbers are entered and calculate button is cl
 
   expect(screen.getByTestId("result")).toHaveTextContent("6");
 });
+
+test("UI: should calculate the result with custom delimiter specified", () => {
+  render(<StringCalculator />);
+
+  const input = screen.getByPlaceholderText(/enter numbers/i);
+  const button = screen.getByText(/calculate/i);
+
+  fireEvent.change(input, { target: { value: "//;\\n1;2" } });
+  fireEvent.click(button);
+
+  expect(screen.getByTestId("result")).toHaveTextContent("3");
+});
