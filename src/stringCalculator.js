@@ -3,7 +3,8 @@ export function add(numbers) {
 
   let delimiter = /[\n,]/;
   if (numbers.startsWith("//")) {
-    const parts = numbers.split("\n", 2);
+    const opt = numbers.includes("\\n") ? "\\n" : "\n";
+    const parts = numbers.split(opt, 2);
     delimiter = new RegExp(`[${parts[0][2]}]`);
     numbers = parts[1];
   }

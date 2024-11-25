@@ -23,7 +23,9 @@ function StringCalculator() {
         onChange={(e) => setNumbers(e.target.value)}
       />
       <button onClick={handleCalculate}>Calculate</button>
-      <div data-testid="result">{result}</div>
+      <div style={{ padding: "1rem" }} data-testid="result">
+        {result}
+      </div>
     </div>
   );
 }
